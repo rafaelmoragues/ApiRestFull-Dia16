@@ -42,7 +42,7 @@ namespace ApiRestFull.Controllers
 
         }
         [HttpDelete("{numero}")]
-        public ActionResult<Autor> Delete(int numero)
+        public ActionResult<Libros> Delete(int numero)
         {
             var libro = context.libros.GetById(numero);
             if (libro == null)
@@ -58,7 +58,7 @@ namespace ApiRestFull.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Autor> FindID(int id)
+        public ActionResult<Libros> FindID(int id)
         {
             var libro = context.libros.GetById(id);
             if (libro == null)
