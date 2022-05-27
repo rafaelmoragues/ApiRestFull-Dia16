@@ -16,5 +16,11 @@ namespace ApiRestFull.Repositories.Implements
             var aux = _db.Libros.Include(x => x.Autor).ToList();
             return aux;
         }
+
+        public Libros GetLibroYAutor(int id)
+        {
+            var libro =_db.Libros.Where(x => x.Id == id).Include(x =>x.Autor).FirstOrDefault();
+            return libro;
+        }
     }
 }

@@ -60,7 +60,7 @@ namespace ApiRestFull.Controllers
         [HttpGet("{id}")]
         public ActionResult<Libros> FindID(int id)
         {
-            var libro = context.libros.GetById(id);
+            var libro = context.libros.GetLibroYAutor(id);
             if (libro == null)
             {
                 return NotFound();

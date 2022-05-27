@@ -1,5 +1,6 @@
 ﻿using ApiRestFull.Repositories;
 using ApiRestFull.Context;
+using ApiRestFull.Repositories.Implements;
 
 namespace ApiRestFull.UOfWork
 {
@@ -12,6 +13,8 @@ namespace ApiRestFull.UOfWork
         public UnitOfWork(ApplicationDBContext context)
         {
             _db = context;
+            libros = new LibrosRepo(context);
+            autores = new AutoresRepo(context); 
         }
         public void Dispose()
         {
